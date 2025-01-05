@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//массив всех вопросов}
+\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{Questions}\PYG{o}{\PYGZca{}}\PYG{o}{\PYGZgt{}}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{test\PYGZus{}dataset}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{Questions}\PYG{o}{\PYGZca{}}\PYG{o}{\PYGZgt{}}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{q}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{Questions}\PYG{o}{\PYGZca{}}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{C++, Python, C \PYGZhy{} это всё \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} (полное словосочетание)}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{:}\PYG{o}{:}\PYG{n}{txt\PYGZus{}answer}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{языки программирования}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Какой тип данных описывает целочисленный тип?}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{:}\PYG{o}{:}\PYG{n}{single}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{o}{\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{integer}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{float}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{boolean}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{string}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\end{MintedVerbatim}

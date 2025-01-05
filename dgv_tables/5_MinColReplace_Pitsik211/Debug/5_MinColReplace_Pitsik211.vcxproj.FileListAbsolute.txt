@@ -1,0 +1,9 @@
+C:\Users\haritonn\source\repos\5_MinColReplace_Pitsik211\5_MinColReplace_Pitsik211\Debug\5_MinColReplace_Pitsik211.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\source\repos\5_MinColReplace_Pitsik211\5_MinColReplace_Pitsik211\Debug\My5MinColReplacePitsik211.MyForm.resources
+C:\Users\haritonn\source\repos\5_MinColReplace_Pitsik211\5_MinColReplace_Pitsik211\Debug\5_MinColReplace_Pitsik211.vcxproj.GenerateResource.cache
+C:\Users\aleksandr\source\repos\5_MinColReplace_Pitsik211\5_MinColReplace_Pitsik211\Debug\5_MinColReplace_Pitsik211.vcxproj.AssemblyReference.cache
+C:\Users\aleksandr\source\repos\5_MinColReplace_Pitsik211\5_MinColReplace_Pitsik211\Debug\My5MinColReplacePitsik211.MyForm.resources
+C:\Users\aleksandr\source\repos\5_MinColReplace_Pitsik211\5_MinColReplace_Pitsik211\Debug\5_MinColReplace_Pitsik211.vcxproj.GenerateResource.cache
+C:\Users\haritonn\Desktop\projects\dgv_tables\5_MinColReplace_Pitsik211\Debug\5_MinColReplace_Pitsik211.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\projects\dgv_tables\5_MinColReplace_Pitsik211\Debug\My5MinColReplacePitsik211.MyForm.resources
+C:\Users\haritonn\Desktop\projects\dgv_tables\5_MinColReplace_Pitsik211\Debug\5_MinColReplace_Pitsik211.vcxproj.GenerateResource.cache

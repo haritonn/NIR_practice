@@ -1,0 +1,498 @@
+\section{Примеры кода} \label{app:codes}
+\subsection*{Обработка табличных данных}
+Код кнопки <<Вычислить>>:
+\begin{minted}[linenos, breaklines=true, style=bw, fontsize=\small]{cpp}
+private: System::Void btn_calc_Click(System::Object^ sender, System::EventArgs^ e) {
+  ClearAll();
+  if (data_x->Rows->Count != data_first->Rows->Count)
+    error_prov->SetError(btn_calc, "Размерности исходной матрицы и X не совпадают!");
+  else
+  {
+    int min_el = 1000000; //условное значение для поиска минимума
+    //первый цикл - ищем минимальный элемент в принципе
+
+    bool flag_for_data = true;
+    for (int i = 0; i < data_first->Columns->Count; i++)
+      for (int j = 0; j < data_first->Rows->Count; j++)
+      {
+        int data_el;
+        bool data_fl = Int32::TryParse(System::Convert::ToString(data_first->Rows[j]->Cells[i]->Value), data_el);
+        if (!data_fl)
+        {
+          error_prov->SetError(btn_calc, "В матрице есть не числа");
+          flag_for_data = false; //исходная таблица не прошла проверку
+        }
+        if (data_el < min_el)
+          min_el = data_el;
+      }
+    bool flag_for_x = true;
+
+    //проверяем корректность данных в X
+    for (int k = 0; k < data_x->Rows->Count; k++)
+    {
+      int x_el;
+      bool x_fl = Int32::TryParse(System::Convert::ToString(data_x->Rows[k]->Cells[0]->Value), x_el);
+      if (!x_fl)
+      {
+        //выводим ошибку
+        error_prov->SetError(btn_calc, "В X есть не числа");
+        flag_for_x = false;//x не прошел проверку
+      }
+    }
+    //если все данные прошли проверку
+    if (flag_for_x && flag_for_data)
+    {
+      bool is_swapped; //если столбец уже нужно поменять на Х
+      for (int i = 0; i < data_first->Columns->Count; i++)
+      {
+        is_swapped = false;
+        for (int j = 0; j < data_first->Rows->Count; j++)
+        {
+          int data_el = Int32::Parse(System::Convert::ToString(data_first->Rows[j]->Cells[i]->Value));
+          if (data_el == min_el) //если в столбце найден мин. элемент
+          {
+            is_swapped = true; //говорим, что столбец нужно менять
+            for (int k = 0; k < data_x->Rows->Count; k++)
+            {
+              //в результирующую таблицу вносим столбец Х
+              data_result->Rows[k]->Cells[i]->Value = data_x->Rows[k]->Cells[0]->Value;
+            }
+            break;
+          }
+          //иначе вносим исходную
+          if (!is_swapped) //иначе
+            data_result->Rows[j]->Cells[i]->Value = data_first->Rows[j]->Cells[i]->Value;
+        }
+      }
+    }
+  }
+}
+\end{minted}
+\subsection*{Использование коллекций в Windows Forms}
+Для кнопки <<Найти должность>> разработан следующий код:
+\begin{minted}[linenos, breaklines=true, style=bw, fontsize=\small]{cpp}
+private: System::Void btn_find_Click(System::Object^ sender, System::EventArgs^ e) {
+  String^ surname = this->text_surname->Text; //считываем введенную фамилию
+  System::Collections::Generic::SortedDictionary <String^, String^> dict;
+
+  for (int i = 0; i < dgv_table->RowCount; ++i) //заполняем словарь для поиска
+    dict.Add(System::Convert::ToString(dgv_table->Rows[i]->Cells[0]->Value),
+      System::Convert::ToString(dgv_table->Rows[i]->Cells[1]->Value));
+
+  bool find_flag = false; //флаг чтобы установить, нашли или нет
+  for each (KeyValuePair<String^, String^> item in dict)
+    //если найден, то выводим в окно и выходим из текста
+    if (item.Key == surname)
+    {
+      find_flag = true;
+      this->text_work->Text = item.Value;
+      break;
+    }
+    //иначе выводим, что не нашли
+  if (!find_flag)
+    this->text_work->Text = "Не найден";
+}
+\end{minted}
+
+Для кнопки <<Вывести фамилии>> разработан следующий код:
+\begin{minted}[linenos, style=bw, fontsize=\small, breaklines=true]{cpp}
+private: System::Void btn_list_Click(System::Object^ sender, System::EventArgs^ e) {
+  this->text_list->Text = ""; //очистим результат прошлых вызовов
+  String^ work = this->text_work1->Text; //считаем введнную должность
+  System::Collections::Generic::SortedDictionary <String^, String^> dict;
+
+ //проходимся по таблице и заполняем словарь для поиска
+  for (int i = 0; i < dgv_table->RowCount; ++i)
+    dict.Add(System::Convert::ToString(dgv_table->Rows[i]->Cells[0]->Value),
+      System::Convert::ToString(dgv_table->Rows[i]->Cells[1]->Value));
+
+  //ищем нужные фамилии, и выводим
+  for each (KeyValuePair<String^, String^> item in dict)
+    if (item.Value == work)
+      this->text_list->Text += item.Key + "\r\n";
+}
+\end{minted}
+\subsection*{Файловые диалоги и работа с файлами}
+Полный код кнопки <<Сохранить>>:
+\begin{minted}[linenos, breaklines=true, style=bw, fontsize=\small]{cpp}
+    private: System::Void btn_save_Click(System::Object^ sender, System::EventArgs^ e) {
+    error_prov->Clear();
+    bool date_flag = true; //для проверки даты
+    for (int i = 0; i < dgv_input->RowCount; ++i)
+    {
+      String^ format = "dd.MM.yyyy"; //формат даты
+      DateTime date; 
+      String^ date_to_parse = System::Convert::ToString(dgv_input->Rows[i]->Cells[3]->Value);
+      date_flag = DateTime::TryParseExact(date_to_parse, format, System::Globalization::CultureInfo::InvariantCulture,
+        DateTimeStyles::None, date); //пытаемся считать дату
+
+      if (!date_flag) //если не вышло, то дальше выведем ошибку и остановим операцию
+        break;
+    }
+    if (!date_flag)
+      error_prov->SetError(dgv_input, "Некорректный формат даты");
+    else
+    {
+      bool flag = true; //для проверки корректности оценок
+      for (int i = 0; i < dgv_input->RowCount; ++i)
+      {
+        for (int j = 4; j < 9; ++j)
+        {
+          String^ s = System::Convert::ToString(dgv_input->Rows[i]->Cells[j]->Value);
+          int num;
+          bool parse = Int32::TryParse(s, num);
+
+          if (parse)
+            if (num > 5 || num < 0) //если оценка некорректная
+              flag = false;
+        }
+        if (!flag)
+          break;
+      }
+
+      if (!flag)
+        error_prov->SetError(dgv_input, "Некорректный формат оценки");
+      else
+      {
+        System::IO::Stream^ myStream; //открываем поток для сохранения
+        if (this->saveFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+        {
+          if ((myStream = saveFileDialog->OpenFile()) != nullptr)
+          {
+            System::IO::StreamWriter^ sw = gcnew System::IO::StreamWriter(myStream, System::Text::Encoding::GetEncoding(1251));
+            for (int i = 0; i < dgv_input->RowCount; ++i)
+            {
+              String^ s; //с помощью строки s записываем таблицу в файл построчно
+              for (int j = 0; j < dgv_input->ColumnCount; ++j)
+                s += System::Convert::ToString(dgv_input->Rows[i]->Cells[j]->Value) + " ";
+
+              sw->WriteLine(s); //сформировав строку, записываем её
+            }
+
+            sw->Close(); //закрываем поток
+          }
+        }
+      }
+    }
+  }
+\end{minted}
+
+Код кнопки <<Выбрать сдавших>>:
+\begin{minted}[linenos, breaklines=true, fontsize=\small, style=bw]{cpp}
+    private: System::Void btn_choose_Click(System::Object^ sender, System::EventArgs^ e) {
+  error_prov->Clear();
+  dgv_output->Rows->Clear(); //очистим таблицу с предыдущего вызова
+  bool date_flag = true;
+  for (int i = 0; i < dgv_input->RowCount; ++i)
+  {
+    String^ format = "dd.MM.yyyy";
+    DateTime date;
+    String^ date_to_parse = System::Convert::ToString(dgv_input->Rows[i]->Cells[3]->Value);
+    date_flag = DateTime::TryParseExact(date_to_parse, format, System::Globalization::CultureInfo::InvariantCulture,
+      DateTimeStyles::None, date);
+
+    if (!date_flag)
+      break;
+  }
+  if (!date_flag)
+    error_prov->SetError(dgv_input, "Некорректный формат даты");
+  else
+  {
+    bool flag = true;
+    for (int i = 0; i < dgv_input->RowCount; ++i)
+    {
+      for (int j = 4; j < 9; ++j)
+      {
+        String^ s = System::Convert::ToString(dgv_input->Rows[i]->Cells[j]->Value);
+        int num;
+        bool parse = Int32::TryParse(s, num);
+
+        if (parse) //если это число, то проверим его
+          if (num > 5  num < 0)
+            flag = false;
+        else //иначе проверим случай, если это строка
+          if (s != "неявка" && s != "незачтено" && s != "зачтено")
+      }
+      if (!flag)
+        break;
+    }
+
+    if (!flag)
+      error_prov->SetError(dgv_input, "Некорректный формат оценок");
+    else
+    {
+      int row_fill = 0;
+      for (int i = 0; i < dgv_input->RowCount; ++i)
+      {
+        bool session_flag = true; //сдал ли студент сессию
+        for (int j = 4; j < 9; ++j)
+        {
+          String^ s = System::Convert::ToString(dgv_input->Rows[i]->Cells[j]->Value);
+          if (s == "зачтено"  s =="незачет"  s == "2"  s == "1" || s == "0")
+            session_flag = false; //не сдал
+        }
+        if (session_flag) //если сдал
+        {
+          dgv_output->Rows->Add(); //записываем в таблицу
+          for (int l = 0; l < dgv_output->ColumnCount; ++l)
+            dgv_output->Rows[row_fill]->Cells[l]->Value = dgv_input->Rows[i]->Cells[l]->Value;
+          row_fill++; //количество сдавших (для записи в таблицу)
+        }
+      }
+    }
+  }
+}
+\end{minted}
+
+Код кнопки <<Сохранить сдавших>>:
+\begin{minted}[linenos, breaklines=true, fontsize=\small, style=bw]{cpp}
+    private: System::Void btn_savechoose_Click(System::Object^ sender, System::EventArgs^ e) {
+  error_prov->Clear();
+
+  bool date_flag = true;
+  for (int i = 0; i < dgv_output->RowCount; ++i)
+  {
+    String^ format = "dd.MM.yyyy"; //формат даты
+    DateTime date;
+    String^ date_to_parse = System::Convert::ToString(dgv_output->Rows[i]->Cells[3]->Value);
+    date_flag = DateTime::TryParseExact(date_to_parse, format, System::Globalization::CultureInfo::InvariantCulture,
+      DateTimeStyles::None, date); //пытаемся считать дату
+
+    if (!date_flag)
+      break;
+  }
+  if (!date_flag) //если не удалось
+    error_prov->SetError(dgv_output, "Некорректный формат даты");
+  else
+  {
+    bool flag = true; //флаг для проверки оценки
+    for (int i = 0; i < dgv_output->RowCount; ++i)
+    {
+      for (int j = 4; j < 9; ++j)
+      {
+        String^ s = System::Convert::ToString(dgv_output->Rows[i]->Cells[j]->Value);
+        int num;
+        bool parse = Int32::TryParse(s, num);
+
+        if (parse)
+          if (num > 5 || num < 0)
+            flag = false;
+        else
+          if (s != "незачтено" && s != "неявка" && s != "зачтено")
+      }
+      if (!flag)
+        break;
+    }
+
+    if (!flag) //если некорректные оценки
+      error_prov->SetError(dgv_output, "Некорректный формат оценок");
+    else
+    {
+      System::IO::Stream^ myStream; //открываем поток
+      if (this->saveFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+      {
+        if ((myStream = saveFileDialog->OpenFile()) != nullptr)
+        {
+          System::IO::StreamWriter^ sw = gcnew System::IO::StreamWriter(myStream, System::Text::Encoding::GetEncoding(1251));
+          for (int i = 0; i < dgv_output->RowCount; ++i)
+          {
+            String^ s; //формируем строку
+            for (int j = 0; j < dgv_output->ColumnCount; ++j)
+              s += System::Convert::ToString(dgv_output->Rows[i]->Cells[j]->Value) + " ";
+
+            sw->WriteLine(s); //записываем в файл
+          }
+
+          sw->Close(); //закрываем поток
+        }
+      }
+    }
+  }
+}
+\end{minted}
+\subsection*{Приложение ТЕСТ}
+Полный массив, содержащий все вопросы теста:
+\begin{minted}[linenos, breaklines=true, style=bw, fontsize=\small]{cpp}
+    //массив всех вопросов 
+  array<Questions^>^ test_dataset() {
+    array<Questions^>^ q = gcnew array<Questions^>(12);
+
+        //вопрос 1
+        q[0] = gcnew Questions();
+        q[0]->text = "C++, Python, C - это всё ______ (полное словосочетание)";
+        q[0]->type = Test::txt_answer;
+        q[0]->answer = "языки программирования";
+
+        //вопрос 2
+        q[1] = gcnew Questions();
+        q[1]->text = "Какой тип данных описывает целочисленный тип?";
+        q[1]->type = Test::single;
+        q[1]->answers = gcnew array<String^>{ "integer", "float", "boolean", "string" };
+        q[1]->answer = 0;
+
+        //вопрос 3
+        q[2] = gcnew Questions();
+        q[2]->text = "C++ является надстройкой над C";
+        q[2]->type = Test::yes_no;
+        q[2]->answer = 0;
+
+        //вопрос 4
+        q[3] = gcnew Questions();
+        q[3]->text = "Каким языком является Python?";
+        q[3]->type = Test::single;
+        q[3]->answers = gcnew array<String^>{"Функциональным", "Интерпретируемым", "Транслируемым", "Компилируемым"};
+        q[3]->answer = 1;
+
+        //вопрос 5
+        q[4] = gcnew Questions();
+        q[4]->text = "C++ - объектно-ориентированный ЯП";
+        q[4]->type = Test::yes_no;
+        q[4]->answer = 0;
+
+        //вопрос 6
+        q[5] = gcnew Questions();
+        q[5]->text = "Что из перечисленного является высокоуровневым ЯП?";
+        q[5]->type = Test::multiple;
+        q[5]->answers = gcnew array<String^>{"Python", "Assembler", "C", "Pandas"};
+        q[5]->answer = gcnew array<int>{0, 2};
+
+        //вопрос 7
+        q[6] = gcnew Questions();
+        q[6]->text = "if в языках программирования является оператором _______";
+        q[6]->type = Test::txt_answer;
+        q[6]->answer = "условия";
+
+        //вопрос 8
+        q[7] = gcnew Questions();
+        q[7]->text = "Что из этого является языком для управления данными через запросы?";
+        q[7]->type = Test::single;
+        q[7]->answers = gcnew array < String^> {"PHP", "Python", "R", "SQL"};
+        q[7]->answer = 3;
+
+        //вопрос 9
+        q[8] = gcnew Questions();
+        q[8]->text = "Как называется программа перевода языка высокого уровня в машинный код?";
+        q[8]->type = Test::single;
+        q[8]->answers = gcnew array<String^> {"Транслятор", "Архиватор", "Диспетчер кода", "ОС"};
+        q[8]->answer = 0;
+
+        //вопрос 10
+        q[9] = gcnew Questions();
+        q[9]->text = "Выберите парадигмы программирования";
+        q[9]->type = Test::multiple;
+        q[9]->answers = gcnew array<String^> {"Функциональная", "Абстрактная", "Процедурная", "Объектно-ориентированная"};
+        q[9]->answer = gcnew array<int>{0, 2, 3};
+
+        //вопрос 11
+        q[10] = gcnew Questions();
+        q[10]->text = "Что из этого является ЯП со строгой типизацией данных?";
+        q[10]->type = Test::multiple;
+        q[10]->answers = gcnew array<String^> {"Java", "Python", "JavaScript", "C++"};
+        q[10]->answer = gcnew array<int>{0, 3};
+
+        //вопрос 12
+        q[11] = gcnew Questions();
+        q[11]->text = "HTML - язык программирования";
+        q[11]->type = Test::yes_no;
+        q[11]->answer = 1;
+
+    return q;
+  }
+\end{minted}
+
+Код кнопки <<Ответить>>:
+\begin{minted}[linenos, style=bw, fontsize=\small, breaklines=true]{cpp}
+    static int counter_of_correct = 0; //общий счётчик правильных ответов
+  private: System::Void btn_answer_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (current_question < questions->Length) //если остались вопросы
+    {
+      test::Questions^ q = questions[current_question];
+      switch (q->type) //в зависимости от типа вопроса
+      {
+      //Да/нет
+      case test::Test::yes_no:
+        if ((radio_yes->Checked && (int)q->answer == 0)  (radio_no->Checked && (int)q->answer == 1))
+        {
+          counter_of_correct++;
+          MessageBox::Show("Правильно!");
+        }
+        else
+          MessageBox::Show("Неправильно! :(");
+        break;
+
+      //Краткий ответ
+      case test::Test::txt_answer:
+        if (text_answer->Text == System::Convert::ToString(q->answer))
+        {
+          counter_of_correct++;
+          MessageBox::Show("Правильно!");
+        }
+        else
+          MessageBox::Show("Неправильно! :(\n Правильный ответ: " + System::Convert::ToString(q->answer));
+        break;
+
+      //Один ответ
+      case test::Test::single:
+        if ((radio_single1->Checked && (int)q->answer == 0)  (radio_single2->Checked && (int)q->answer == 1) 
+          (radio_single3->Checked && (int)q->answer == 2)  (radio_single4->Checked && (int)q->answer == 3))
+        {
+          counter_of_correct++;
+          MessageBox::Show("Правильно!");
+        }
+        else
+          MessageBox::Show("Неправильно! :( \n Правильный ответ: " + (q->answers[(int)q->answer]));
+        break;
+
+      //Несколько ответов
+      case test::Test::multiple:
+        bool is_checked_only_correct = true;
+        array<int>^ correct = (array<int>^)q->answer;
+        for (int i = 0; i < correct->Length; ++i)
+        {
+          int cor = correct[i];
+          if ((cor == 0 && !check_1->Checked)  (cor == 1 && !check_2->Checked) 
+            (cor == 2 && !check_3->Checked) || (cor == 3 && !check_4->Checked))
+            is_checked_only_correct = false;
+        }
+
+        //защита от случая, когда пользователь выбрал все ответы
+        if (check_1->Checked && Array::IndexOf(correct, 0) == -1) {
+          is_checked_only_correct = false;
+        }
+        if (check_2->Checked && Array::IndexOf(correct, 1) == -1) {
+          is_checked_only_correct = false;
+        }
+        if (check_3->Checked && Array::IndexOf(correct, 2) == -1) {
+          is_checked_only_correct = false;
+        }
+        if (check_4->Checked && Array::IndexOf(correct, 3) == -1) {
+          is_checked_only_correct = false;
+        }
+
+        if (is_checked_only_correct)
+        {
+          counter_of_correct++;
+          MessageBox::Show("Правильно!");
+        }
+        else
+        {
+          // строка для вывода 
+          String^ string_to_print = "Неправильно! :( \n Правильный ответ: ";
+          for (int i = 0; i < correct->Length; i++)
+            string_to_print += System::Convert::ToString(q->answers[correct[i]]) + " ";
+
+          MessageBox::Show(string_to_print);
+        }
+        break;
+      }
+    }
+
+    
+    current_question++;
+    if (current_question < questions->Length) {
+      display_question(questions[current_question]);
+    }
+    else //если вопросы закончились
+      MessageBox::Show("Поздравляем, Вы прошли тест! Ваш счёт: " + System::Convert::ToString(counter_of_correct) + " из " + System::Convert::ToString(questions->Length));
+  }
+\end{minted}

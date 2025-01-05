@@ -1,0 +1,8 @@
+C:\Users\haritonn\source\repos\7NIR_Pitsik\7NIR_Pitsik\x64\Debug\My7NIRPitsik.MyForm.resources
+C:\Users\haritonn\source\repos\7NIR_Pitsik\7NIR_Pitsik\x64\Debug\7NIR_Pitsik.vcxproj.GenerateResource.cache
+C:\Users\haritonn\Desktop\7NIR_Pitsik\7NIR_Pitsik\x64\Debug\7NIR_Pitsik.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\7NIR_Pitsik\7NIR_Pitsik\x64\Debug\My7NIRPitsik.MyForm.resources
+C:\Users\haritonn\Desktop\7NIR_Pitsik\7NIR_Pitsik\x64\Debug\7NIR_Pitsik.vcxproj.GenerateResource.cache
+C:\Users\haritonn\Desktop\projects\collections\7NIR_Pitsik\x64\Debug\7NIR_Pitsik.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\projects\collections\7NIR_Pitsik\x64\Debug\My7NIRPitsik.MyForm.resources
+C:\Users\haritonn\Desktop\projects\collections\7NIR_Pitsik\x64\Debug\7NIR_Pitsik.vcxproj.GenerateResource.cache

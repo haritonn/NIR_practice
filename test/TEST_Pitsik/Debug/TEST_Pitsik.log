@@ -1,0 +1,9 @@
+﻿  MyForm.cpp
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\test_structure.h(53,25): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\test_structure.h(58,25): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\test_structure.h(69,25): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\test_structure.h(92,25): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Generating Code...
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  TEST_Pitsik.vcxproj -> C:\Users\haritonn\Desktop\projects\test\Debug\TEST_Pitsik.exe

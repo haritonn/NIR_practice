@@ -1,0 +1,22 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}rm\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{CurrentRow}\PYG{+w}{ }\PYG{o}{!}\PYG{o}{=}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{o}{!}\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{CurrentRow}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{IsNewRow}\PYG{p}{)}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{rowIndex}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{CurrentRow}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Index}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rowIndex}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Count}\PYG{p}{)}
+\PYG{+w}{    }\PYG{c+c1}{// удаляем строку из data\PYGZus{}first}
+\PYG{+w}{    }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{RemoveAt}\PYG{p}{(}\PYG{n}{rowIndex}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// проверяем есть ли rowIndex в data\PYGZus{}x}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rowIndex}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Count}\PYG{p}{)}
+\PYG{+w}{      }\PYG{c+c1}{// удаляем строку из data\PYGZus{}x по тому же индексу}
+\PYG{+w}{      }\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{RemoveAt}\PYG{p}{(}\PYG{n}{rowIndex}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// проверяем есть ли rowIndex в data\PYGZus{}result}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{rowIndex}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}result}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Count}\PYG{p}{)}
+\PYG{+w}{      }\PYG{c+c1}{// удаляем строку из data\PYGZus{}result по тому же индексу}
+\PYG{+w}{      }\PYG{n}{data\PYGZus{}result}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{RemoveAt}\PYG{p}{(}\PYG{n}{rowIndex}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

@@ -1,0 +1,69 @@
+\documentclass[bachelor, och, pract]{SCWorks}
+
+\usepackage{preamble}
+
+\begin{document}
+\chair{математической кибернетики и компьютерных наук}
+\title{Разработка приложений Windows.Forms на языке C++ в
+среде Microsoft Visual Studio}
+\course{2}
+\group{211}
+
+\napravlenie{02.03.02 "--- Фундаментальная информатика и информационные технологии}
+\author{Пицика Харитона Николаевича}
+
+\chtitle{к.\,ф.-м.\,н.,~доцент} 
+\chname{С.\,В.\,Миронов}
+
+\satitle{доцент, к.\,ф.-м.\,н.} %должность, степень, звание
+\saname{М.\,И.\,Сафрончик}
+
+\patitle{доцент, к.\,ф.-м.\,н.}
+\paname{М.\,И.\,Сафрончик}
+\practtype{учебная}
+\term{3}
+\duration{18}
+
+\practStart{02.09.24}
+\practFinish{09.01.25}
+
+\date{2024}
+\maketitle
+
+\tableofcontents
+
+\intro
+Целью практики является освоение среды Visual Studio, а также отработка алгоритма 
+построения оконных интерфейсов. В результате практики должны быть отработаны следующие навыки:
+\begin{itemize}
+    \item создание нового проекта;
+    \item добавление и конфигурация элементов управления;
+    \item корректный ввод данных для решения поставленной задачи;
+    \item разработка алгоритма для решения поставленной задачи;
+    \item тестирование приложения;
+    \item документирование кода.
+\end{itemize}
+
+\include{tasks/task1}
+\include{tasks/task2}
+\include{tasks/task3}
+\include{tasks/task4}
+\include{tasks/task5}
+
+\conclusion
+В ходе практики было реализовано несколько приложений на языке \verb|C++|
+в среде \verb|Microsoft Visual Studio| с целью закрепления навыков построения оконного интерфейса. 
+На практике разработаны приложения, содержащие такие
+элементы интерфейса как \verb|TextBox|, \verb|Label|, \verb|Button|, 
+\verb|DataGridView|,
+\verb|OpenFileDialog|, \verb|SaveFileDialog|, \verb|ErrorProvider|.
+\newpage
+\bibliographystyle{gost780uv}
+\bibliography{thesis}
+
+
+\appendix
+\include{apps/app_a}
+\include{apps/app_b}
+
+\end{document}

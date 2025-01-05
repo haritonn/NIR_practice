@@ -1,0 +1,3 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Collections}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Generic}\PYG{o}{:}\PYG{o}{:}\PYG{n}{SortedDictionary}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{dict}\PYG{p}{;}
+\end{MintedVerbatim}

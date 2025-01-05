@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}dict\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{btn\PYGZus{}dict}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Enabled}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Collections}\PYG{o}{::}\PYG{n}{Generic}\PYG{o}{::}\PYG{n}{SortedDictionary}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{dict}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{//Элементы словаря}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Пицик\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Старший разработчик\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Коновалов\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}DevOps инженер\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Дрождев\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Разработчик\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Цой\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}ML\PYGZhy{}инженер\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Артамонова\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Средний разработчик\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Карасёв\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}DevOps инженер\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Воронцов\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Prompt инженер\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Гришин\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Full\PYGZhy{}stack разработчик\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Николаев\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}GameDev разработчик\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Иванов\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Младший разработчик\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{each}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{KeyValuePair}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{item}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{dict}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{row}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}table}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Add}\PYG{p}{();}
+\PYG{+w}{      }\PYG{n}{dgv\PYGZus{}table}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{row}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{item}\PYG{p}{.}\PYG{n}{Key}\PYG{p}{;}
+\PYG{+w}{      }\PYG{n}{dgv\PYGZus{}table}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{row}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{item}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

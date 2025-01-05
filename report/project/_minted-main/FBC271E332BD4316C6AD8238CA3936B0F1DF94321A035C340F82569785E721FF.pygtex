@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{flag\PYGZus{}for\PYGZus{}x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x\PYGZus{}el}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{x\PYGZus{}fl}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Int32}\PYG{o}{::}\PYG{n}{TryParse}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{x\PYGZus{}el}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{x\PYGZus{}fl}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{btn\PYGZus{}calc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}В X есть не числа\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{flag\PYGZus{}for\PYGZus{}x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

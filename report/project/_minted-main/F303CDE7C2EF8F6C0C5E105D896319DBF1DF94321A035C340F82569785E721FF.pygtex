@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}calc\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{ClearAll}\PYG{p}{();}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{btn\PYGZus{}calc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Размерности исходной матрицы и X не совпадают!\PYGZdq{}}\PYG{p}{);}
+\end{Verbatim}

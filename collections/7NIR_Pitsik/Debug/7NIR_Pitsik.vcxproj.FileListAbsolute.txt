@@ -1,0 +1,2 @@
+C:\Users\haritonn\source\repos\7NIR_Pitsik\7NIR_Pitsik\Debug\My7NIRPitsik.MyForm.resources
+C:\Users\haritonn\source\repos\7NIR_Pitsik\7NIR_Pitsik\Debug\7NIR_Pitsik.vcxproj.GenerateResource.cache

@@ -1,0 +1,63 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}choose\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Clear}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Clear}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{date\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{format}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{dd.MM.yyyy}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{date}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{date\PYGZus{}to\PYGZus{}parse}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Convert}\PYG{o}{:}\PYG{o}{:}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Value}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{date\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{o}{:}\PYG{o}{:}\PYG{n}{TryParseExact}\PYG{p}{(}\PYG{n}{date\PYGZus{}to\PYGZus{}parse}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{format}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Globalization}\PYG{o}{:}\PYG{o}{:}\PYG{n}{CultureInfo}\PYG{o}{:}\PYG{o}{:}\PYG{n}{InvariantCulture}\PYG{p}{,}
+\PYG{+w}{      }\PYG{n}{DateTimeStyles}\PYG{o}{:}\PYG{o}{:}\PYG{n}{None}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{date}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{date\PYGZus{}flag}\PYG{p}{)}
+\PYG{+w}{      }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{date\PYGZus{}flag}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}input}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Некорректный формат даты}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{else}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{9}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Convert}\PYG{o}{:}\PYG{o}{:}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Value}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{num}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{parse}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Int32}\PYG{o}{:}\PYG{o}{:}\PYG{n}{TryParse}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{num}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{parse}\PYG{p}{)}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{num}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{+w}{  }\PYG{n}{num}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{+w}{            }\PYG{n}{flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{flag}\PYG{p}{)}
+\PYG{+w}{        }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{flag}\PYG{p}{)}
+\PYG{+w}{      }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}input}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Некорректный формат оценок}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{row\PYGZus{}fill}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{session\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{9}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{          }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{:}\PYG{o}{:}\PYG{n}{Convert}\PYG{o}{:}\PYG{o}{:}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Value}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{зачтено}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{  }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{незачет}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{  }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{2}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{  }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{1}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{|}\PYG{o}{|}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{0}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{            }\PYG{n}{session\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{session\PYGZus{}flag}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{          }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Add}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{          }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{l}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{l}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{ColumnCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{l}\PYG{p}{)}
+\PYG{+w}{            }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{row\PYGZus{}fill}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{l}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}input}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{l}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{          }\PYG{n}{row\PYGZus{}fill}\PYG{o}{+}\PYG{o}{+}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

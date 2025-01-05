@@ -1,0 +1,6 @@
+C:\Users\haritonn\source\repos\TEST_Pitsik\TEST_Pitsik\Debug\TEST_Pitsik.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\source\repos\TEST_Pitsik\TEST_Pitsik\Debug\TESTPitsik.MyForm.resources
+C:\Users\haritonn\source\repos\TEST_Pitsik\TEST_Pitsik\Debug\TEST_Pitsik.vcxproj.GenerateResource.cache
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\Debug\TEST_Pitsik.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\Debug\TESTPitsik.MyForm.resources
+C:\Users\haritonn\Desktop\projects\test\TEST_Pitsik\Debug\TEST_Pitsik.vcxproj.GenerateResource.cache

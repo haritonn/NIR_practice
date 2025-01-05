@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{ClearAll}\PYG{p}{(}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{btn\PYGZus{}calc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

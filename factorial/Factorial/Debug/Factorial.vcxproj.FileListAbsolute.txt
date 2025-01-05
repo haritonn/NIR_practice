@@ -1,0 +1,3 @@
+C:\Users\haritonn\Desktop\projects\factorial\Factorial\Factorial\Debug\Factorial.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\projects\factorial\Factorial\Factorial\Debug\Factorial.MyForm.resources
+C:\Users\haritonn\Desktop\projects\factorial\Factorial\Factorial\Debug\Factorial.vcxproj.GenerateResource.cache

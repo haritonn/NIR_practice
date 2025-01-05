@@ -1,0 +1,9 @@
+C:\Users\haritonn\source\repos\Files_NIR_Pitsik211\Files_NIR_Pitsik211\Debug\Files_NIR_Pitsik211.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\source\repos\Files_NIR_Pitsik211\Files_NIR_Pitsik211\Debug\FilesNIRPitsik211.MyForm.resources
+C:\Users\haritonn\source\repos\Files_NIR_Pitsik211\Files_NIR_Pitsik211\Debug\Files_NIR_Pitsik211.vcxproj.GenerateResource.cache
+C:\Users\haritonn\Desktop\Files_NIR_Pitsik211\Files_NIR_Pitsik211\Debug\Files_NIR_Pitsik211.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\Files_NIR_Pitsik211\Files_NIR_Pitsik211\Debug\FilesNIRPitsik211.MyForm.resources
+C:\Users\haritonn\Desktop\Files_NIR_Pitsik211\Files_NIR_Pitsik211\Debug\Files_NIR_Pitsik211.vcxproj.GenerateResource.cache
+C:\Users\haritonn\Desktop\projects\files\Files_NIR_Pitsik211\Debug\Files_NIR_Pitsik211.vcxproj.AssemblyReference.cache
+C:\Users\haritonn\Desktop\projects\files\Files_NIR_Pitsik211\Debug\FilesNIRPitsik211.MyForm.resources
+C:\Users\haritonn\Desktop\projects\files\Files_NIR_Pitsik211\Debug\Files_NIR_Pitsik211.vcxproj.GenerateResource.cache

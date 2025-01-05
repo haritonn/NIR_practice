@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+C:\Users\haritonn\Desktop\projects\factorial\Factorial\Factorial\fact.h(8,21): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Factorial.vcxproj -> C:\Users\haritonn\Desktop\projects\factorial\Factorial\Debug\Factorial.exe
