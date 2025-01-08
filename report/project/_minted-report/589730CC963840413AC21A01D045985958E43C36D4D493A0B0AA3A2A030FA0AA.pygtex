@@ -1,0 +1,87 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{//массив всех вопросов}
+\PYG{+w}{  }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{Questions}\PYG{o}{\PYGZca{}\PYGZgt{}\PYGZca{}}\PYG{+w}{ }\PYG{n}{test\PYGZus{}dataset}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{Questions}\PYG{o}{\PYGZca{}\PYGZgt{}\PYGZca{}}\PYG{+w}{ }\PYG{n}{q}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{Questions}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 1}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C++, Python, C \PYGZhy{} это всё \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} (полное словосочетание)\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{txt\PYGZus{}answer}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}языки программирования\PYGZdq{}}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 2}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Какой тип данных описывает целочисленный тип?\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{single}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}integer\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}float\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}boolean\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}string\PYGZdq{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 3}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C++ является надстройкой над C\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{yes\PYGZus{}no}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 4}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Каким языком является Python?\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{single}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Функциональным\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Интерпретируемым\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Транслируемым\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Компилируемым\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 5}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C++ \PYGZhy{} объектно\PYGZhy{}ориентированный ЯП\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{yes\PYGZus{}no}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 6}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Что из перечисленного является высокоуровневым ЯП?\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{multiple}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Python\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Assembler\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Pandas\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 7}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}if в языках программирования является оператором \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{txt\PYGZus{}answer}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}условия\PYGZdq{}}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 8}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Что из этого является языком для управления данными через запросы?\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{single}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}PHP\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Python\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}R\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}SQL\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 9}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Как называется программа перевода языка высокого уровня в машинный код?\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{single}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Транслятор\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Архиватор\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Диспетчер кода\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}ОС\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 10}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Выберите парадигмы программирования\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{multiple}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Функциональная\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Абстрактная\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Процедурная\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Объектно\PYGZhy{}ориентированная\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 11}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Что из этого является ЯП со строгой типизацией данных?\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{multiple}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answers}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Java\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Python\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}JavaScript\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}C++\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{        }\PYG{c+c1}{//вопрос 12}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{Questions}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}HTML \PYGZhy{} язык программирования\PYGZdq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Test}\PYG{o}{::}\PYG{n}{yes\PYGZus{}no}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{q}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{q}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

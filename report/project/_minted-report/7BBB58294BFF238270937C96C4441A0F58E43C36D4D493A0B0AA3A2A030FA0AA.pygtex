@@ -1,0 +1,65 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}savechoose\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Clear}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{date\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{format}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}dd.MM.yyyy\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//формат даты}
+\PYG{+w}{    }\PYG{n}{DateTime}\PYG{+w}{ }\PYG{n}{date}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{date\PYGZus{}to\PYGZus{}parse}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{date\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{DateTime}\PYG{o}{::}\PYG{n}{TryParseExact}\PYG{p}{(}\PYG{n}{date\PYGZus{}to\PYGZus{}parse}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{format}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Globalization}\PYG{o}{::}\PYG{n}{CultureInfo}\PYG{o}{::}\PYG{n}{InvariantCulture}\PYG{p}{,}
+\PYG{+w}{      }\PYG{n}{DateTimeStyles}\PYG{o}{::}\PYG{n}{None}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{date}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//пытаемся считать дату}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{date\PYGZus{}flag}\PYG{p}{)}
+\PYG{+w}{      }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{date\PYGZus{}flag}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{//если не удалось}
+\PYG{+w}{    }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}output}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Некорректный формат даты\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{else}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//флаг для проверки оценки}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{9}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{num}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{parse}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Int32}\PYG{o}{::}\PYG{n}{TryParse}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{num}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{parse}\PYG{p}{)}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{num}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{+w}{ }\PYG{o}{||}\PYG{+w}{ }\PYG{n}{num}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{+w}{            }\PYG{n}{flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{else}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{s}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}незачтено\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}неявка\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}зачтено\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{flag}\PYG{p}{)}
+\PYG{+w}{        }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{flag}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{//если некорректные оценки}
+\PYG{+w}{      }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}output}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Некорректный формат оценок\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{System}\PYG{o}{::}\PYG{n}{IO}\PYG{o}{::}\PYG{n}{Stream}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{myStream}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//открываем поток}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{saveFileDialog}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{ShowDialog}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Windows}\PYG{o}{::}\PYG{n}{Forms}\PYG{o}{::}\PYG{n}{DialogResult}\PYG{o}{::}\PYG{n}{OK}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{((}\PYG{n}{myStream}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{saveFileDialog}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{OpenFile}\PYG{p}{())}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{          }\PYG{n}{System}\PYG{o}{::}\PYG{n}{IO}\PYG{o}{::}\PYG{n}{StreamWriter}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sw}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{gcnew}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{IO}\PYG{o}{::}\PYG{n}{StreamWriter}\PYG{p}{(}\PYG{n}{myStream}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Text}\PYG{o}{::}\PYG{n}{Encoding}\PYG{o}{::}\PYG{n}{GetEncoding}\PYG{p}{(}\PYG{l+m+mi}{1251}\PYG{p}{));}
+\PYG{+w}{          }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{          }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//формируем строку}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{ColumnCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{              }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}output}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+
+\PYG{+w}{            }\PYG{n}{sw}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{n}{s}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//записываем в файл}
+\PYG{+w}{          }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{          }\PYG{n}{sw}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Close}\PYG{p}{();}\PYG{+w}{ }\PYG{c+c1}{//закрываем поток}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

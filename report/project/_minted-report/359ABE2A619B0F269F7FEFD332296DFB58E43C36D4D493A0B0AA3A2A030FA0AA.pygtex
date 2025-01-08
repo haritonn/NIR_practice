@@ -1,0 +1,67 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}calc\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{ClearAll}\PYG{p}{();}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{btn\PYGZus{}calc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Размерности исходной матрицы и X не совпадают!\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{else}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{min\PYGZus{}el}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1000000}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//условное значение для поиска минимума}
+\PYG{+w}{    }\PYG{c+c1}{//первый цикл \PYGZhy{} ищем минимальный элемент в принципе}
+
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{flag\PYGZus{}for\PYGZus{}data}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Columns}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{      }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{data\PYGZus{}el}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{data\PYGZus{}fl}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Int32}\PYG{o}{::}\PYG{n}{TryParse}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{data\PYGZus{}el}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{data\PYGZus{}fl}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{          }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{btn\PYGZus{}calc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}В матрице есть не числа\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{          }\PYG{n}{flag\PYGZus{}for\PYGZus{}data}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//исходная таблица не прошла проверку}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{data\PYGZus{}el}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{min\PYGZus{}el}\PYG{p}{)}
+\PYG{+w}{          }\PYG{n}{min\PYGZus{}el}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{data\PYGZus{}el}\PYG{p}{;}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{flag\PYGZus{}for\PYGZus{}x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{//проверяем корректность данных в X}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x\PYGZus{}el}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{x\PYGZus{}fl}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Int32}\PYG{o}{::}\PYG{n}{TryParse}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{x\PYGZus{}el}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{x\PYGZus{}fl}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{c+c1}{//выводим ошибку}
+\PYG{+w}{        }\PYG{n}{error\PYGZus{}prov}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{SetError}\PYG{p}{(}\PYG{n}{btn\PYGZus{}calc}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}В X есть не числа\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{flag\PYGZus{}for\PYGZus{}x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}\PYG{c+c1}{//x не прошел проверку}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{c+c1}{//если все данные прошли проверку}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{flag\PYGZus{}for\PYGZus{}x}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{flag\PYGZus{}for\PYGZus{}data}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{is\PYGZus{}swapped}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//если столбец уже нужно поменять на Х}
+\PYG{+w}{      }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Columns}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{      }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{is\PYGZus{}swapped}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{          }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{data\PYGZus{}el}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Int32}\PYG{o}{::}\PYG{n}{Parse}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{));}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{data\PYGZus{}el}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{min\PYGZus{}el}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{//если в столбце найден мин. элемент}
+\PYG{+w}{          }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{is\PYGZus{}swapped}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//говорим, что столбец нужно менять}
+\PYG{+w}{            }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Count}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{k}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{            }\PYG{p}{\PYGZob{}}
+\PYG{+w}{              }\PYG{c+c1}{//в результирующую таблицу вносим столбец Х}
+\PYG{+w}{              }\PYG{n}{data\PYGZus{}result}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{data\PYGZus{}x}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{            }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{          }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{          }\PYG{c+c1}{//иначе вносим исходную}
+\PYG{+w}{          }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{is\PYGZus{}swapped}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{//иначе}
+\PYG{+w}{            }\PYG{n}{data\PYGZus{}result}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{data\PYGZus{}first}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

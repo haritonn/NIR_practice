@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// структура для Теста}
+\PYG{k}{public}\PYG{+w}{ }\PYG{k}{enum}\PYG{+w}{ }\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{Test}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{yes\PYGZus{}no}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{single}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{multiple}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{txt\PYGZus{}answer}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{    }\PYG{c+c1}{//структура вопросов}
+\PYG{+w}{    }\PYG{k}{public}\PYG{+w}{ }\PYG{n}{ref}\PYG{+w}{ }\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{Questions}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{System}\PYG{o}{::}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{text}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//формулировка вопроса}
+\PYG{+w}{        }\PYG{n}{array}\PYG{o}{\PYGZlt{}}\PYG{n}{System}\PYG{o}{::}\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}\PYGZca{}}\PYG{+w}{ }\PYG{n}{answers}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//варианты ответа}
+\PYG{+w}{        }\PYG{n}{Test}\PYG{+w}{ }\PYG{n}{type}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//тип ответа}
+\PYG{+w}{        }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{answer}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//ответ}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

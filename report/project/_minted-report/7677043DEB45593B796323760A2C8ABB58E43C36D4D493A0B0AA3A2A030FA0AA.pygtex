@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{private}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Void}\PYG{+w}{ }\PYG{n}{btn\PYGZus{}find\PYGZus{}Click}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Object}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{sender}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{System}\PYG{o}{::}\PYG{n}{EventArgs}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{surname}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text\PYGZus{}surname}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Text}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//считываем введенную фамилию}
+\PYG{+w}{  }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Collections}\PYG{o}{::}\PYG{n}{Generic}\PYG{o}{::}\PYG{n}{SortedDictionary}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{dict}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dgv\PYGZus{}table}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{RowCount}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{++}\PYG{n}{i}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{//заполняем словарь для поиска}
+\PYG{+w}{    }\PYG{n}{dict}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}table}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{),}
+\PYG{+w}{      }\PYG{n}{System}\PYG{o}{::}\PYG{n}{Convert}\PYG{o}{::}\PYG{n}{ToString}\PYG{p}{(}\PYG{n}{dgv\PYGZus{}table}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rows}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Cells}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Value}\PYG{p}{));}
+
+\PYG{+w}{  }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{find\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//флаг чтобы установить, нашли или нет}
+\PYG{+w}{  }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{each}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{KeyValuePair}\PYG{o}{\PYGZlt{}}\PYG{n}{String}\PYG{o}{\PYGZca{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{String}\PYG{o}{\PYGZca{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{item}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{dict}\PYG{p}{)}
+\PYG{+w}{    }\PYG{c+c1}{//если найден, то выводим в окно и выходим из текста}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{item}\PYG{p}{.}\PYG{n}{Key}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{surname}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{find\PYGZus{}flag}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text\PYGZus{}work}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{item}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{c+c1}{//иначе выводим, что не нашли}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{find\PYGZus{}flag}\PYG{p}{)}
+\PYG{+w}{    }\PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{text\PYGZus{}work}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Text}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Не найден\PYGZdq{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
